@@ -1,0 +1,12 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http_requests.js",
+  "scripts": {
+    "start": "handling_http_modules.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
