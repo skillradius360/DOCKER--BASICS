@@ -6,6 +6,7 @@ let numBer = 22222222
 // statememnts such that they check certain conditions to go to the next code to be executed
 
 exp.use((req,res,next)=>{
+    console.log(ural.parse(req.url))
  if(ural.parse(req.url,true).query.id=="kid" && ural.parse(req.url,true).query.pass=="password"){
      next()
  }
