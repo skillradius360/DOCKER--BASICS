@@ -17,4 +17,4 @@ const baseSchema = mongoose.Schema({
 const empObj = mongoose.model("employees",baseSchema)
 
 
-module.exports = {empObj}
+module.exports = empObj

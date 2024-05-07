@@ -2,25 +2,22 @@ const express = require("express")
 const Url = require("url")
 const mongoose= require("mongoose")
 const Student_Router = require("./routes/student")
+const {mongoDBConnect} = require("./connection")
 
 const exp = express()
 exp.use(express.json())
+exp.use(express.urlencoded({extended:true}))
 exp.use("/api",Student_Router)
 
-//<--------------------GET------------------->
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/").then(()=>{
-    console.log("db Connected")
-}).catch((err)=>{
-    console.log("This is the error",err)
-})
+
 
 exp.listen("8080",()=>{
     console.log("express Conn..")
 })
 
-
+mongoDBConnect()
 
 
 
