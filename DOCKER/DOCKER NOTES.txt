@@ -1,0 +1,43 @@
+DOCKER
+
+DOCKER LINUX OPTIONS:-
+-e  -->env.
+-d  -->detach.
+-p  -->port.
+--name ---> add a name to container. 
+--net  ---> add a network while spinning a image.
+
+
+docker -v || docker version
+
+docker image ls ---> show images.
+docker image rm IMAGENAME ---> removes image.
+
+
+docker pull REPONAME  ---> import some discImage.
+docker run IMAGENAME  ---> run a normal image.
+
+RUN POSTGRES:-
+(docker run -e POSTGRES_PASSWORD=mysecretpassword -d postgres).
+
+docker ps ---> show running containers
+docker container kill CONTAINER_ID ---> kills a spinning container
+
+DOCKER NETWORK:-
+docker network ls
+docker network connect NETWORK_NAME
+
+
+
+CONNECT MONGO AND EXPRESS:-
+docker run --name mongoServer -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=username -e MONGO_INITDB_ROOT_PASSWORD=password --net mongo-network -d mongo
+
+
+ docker run -d `
+>> -p 8081:8081 `
+>> -e ME_CONFIG_MONGODB_ADMINUSERNAME=username `
+>> -e ME_CONFIG_MONGODB_ADMINPASSWORD=password `
+>> -e ME_CONFIG_MONGODB_SERVER=mongoServer `
+>> --net mongo-network `
+>> --name mongo-express `
+>> mongo-express
